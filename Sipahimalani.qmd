@@ -110,3 +110,15 @@ students_a |>
 
 ## Question 10 
 The data set contains `r nrow(grades)` grades.
+
+## Question 11
+```{r}
+grades_course <- inner_join(grades, course, by=join_by(course_id))
+g_c_s <- inner_join(grades_course, students, by=join_by(id))
+g_c_s|>
+  filter(course=="Hunting and Gathering Skills")|>
+  summarise(`average grade`=mean(grade, na.rm=TRUE),.by=group)|>
+  ggplot(aes(x = group, y = `average grade`))+
+  geom_col()
+```
+
