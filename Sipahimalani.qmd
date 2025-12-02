@@ -108,4 +108,5 @@ students_a |>
   knitr::kable()
 ```
 
-
+## Question 10 
+The data set contains `r nrow(grades)` grades.
