@@ -136,3 +136,19 @@ g_c_s|>
   facet_wrap(vars(semester))
 ```
 The standard deviation is way smaller in the first semester. 
+
+## Question 13 
+
+```{r}
+g_c_s|>
+  select(grade,id,group,sex)|>
+  mutate(n=n(),.by=id)|>
+  select(n,id,group,sex)|>
+  slice_tail(n=5)|>
+    knitr::kable()
+
+grades|>
+  mutate(n=n(),.by=id)|>
+  summarise(min=min(n),max=max(n),average=mean(n),median=median(n))|>
+    knitr::kable()
+```
