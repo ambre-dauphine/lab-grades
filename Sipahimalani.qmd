@@ -4,6 +4,7 @@ author: "Ambre Sipahimalani"
 format: html
 ---
 ```{r}
+#| message: false
 here::i_am("lab-grades.Rproj")
 library(here)
 library(ggplot2)
@@ -15,7 +16,17 @@ library(vroom)
 ## Question 1
 
 ```{r}
+#| message: false
 course <- vroom(here("data","courses.csv"))
+```
+
+## Question 2
+
+```{r}
+course|>
+  arrange(course)|>
+  rename(`course name`=course, identifier=course_id, `number of exams`=nb_grades)|>
+    knitr::kable()
 ```
 
 
