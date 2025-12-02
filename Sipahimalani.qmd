@@ -5,6 +5,7 @@ format: html
 ---
 ```{r}
 #| message: false
+#| warning: false
 here::i_am("lab-grades.Rproj")
 library(here)
 library(ggplot2)
@@ -14,6 +15,7 @@ library(vroom)
 library(readr)
 library(lubridate)
 ```
+Link to the Github repository : https://github.com/ambre-dauphine/lab-grades.git
 
 ## Question 1
 
