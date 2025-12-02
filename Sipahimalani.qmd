@@ -85,4 +85,13 @@ students|>
   geom_rug(alpha=0.1)
 ```
 
+## Question 8 
+
+```{r}
+students|>
+  mutate(age=time_length(today() - birth_date, unit="year"))|>
+  summarise(`median age`=as.integer(round(median(age))),.by=group)|>
+  knitr::kable()
+```
+
 
