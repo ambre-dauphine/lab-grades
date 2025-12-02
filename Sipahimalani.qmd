@@ -3,4 +3,19 @@ title: "Sipahimalani"
 author: "Ambre Sipahimalani"
 format: html
 ---
+```{r}
+here::i_am("lab-grades.Rproj")
+library(here)
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+library(vroom)
+```
+
+## Question 1
+
+```{r}
+course <- vroom(here("data","courses.csv"))
+```
+
 
