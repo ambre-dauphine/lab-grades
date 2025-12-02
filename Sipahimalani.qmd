@@ -152,3 +152,15 @@ grades|>
   summarise(min=min(n),max=max(n),average=mean(n),median=median(n))|>
     knitr::kable()
 ```
+
+## Question 14 
+
+```{r}
+g_c_s|>
+  select(grade,id,group,sex)|>
+  mutate(n=n(),.by=id)|>
+  select(n,id,group,sex)|>
+  ggplot(aes(x=n,fill=sex))+
+  geom_bar(position="fill")
+```
+
