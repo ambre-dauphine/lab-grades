@@ -64,3 +64,11 @@ students|>
   geom_bar()
 ```
 
+## Question 6 
+
+```{r}
+students|>
+  ggplot(aes(x=group, fill =sex))+
+  geom_bar(position="fill")
+```
+
