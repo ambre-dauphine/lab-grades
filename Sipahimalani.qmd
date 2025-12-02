@@ -33,6 +33,7 @@ course|>
 ### Question 3 
 
 ```{r}
+#| message: false
 students <- read_delim(here("data","students.csv"),
                        col_types=cols(
                          id=col_integer(),
@@ -44,3 +45,13 @@ students <- read_delim(here("data","students.csv"),
 
 The `birth_date` column of the `students` data frame is of class `r class(students$birth_date)`.
 The `sex` column of the `students` data frame is of class `r class(students$sex)`.
+
+## Question 4 
+
+```{r}
+#| message: false
+grades <- read_delim(here("data","grades.csv"),
+                     delim="|",
+                     na="$")
+```
+
