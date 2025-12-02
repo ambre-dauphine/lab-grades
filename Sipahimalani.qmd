@@ -122,3 +122,17 @@ g_c_s|>
   geom_col()
 ```
 
+## Question 12
+
+```{r}
+g_c_s <- g_c_s |>
+  mutate(semester = factor(semester))
+
+g_c_s|>
+  filter(!is.na(grade))|>
+  ggplot(aes(x=grade))+
+  geom_density(bw="sj")+
+  geom_rug(alpha=0.01)+
+  facet_wrap(vars(semester))
+```
+The standard deviation is way smaller in the first semester. 
