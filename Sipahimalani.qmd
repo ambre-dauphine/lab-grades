@@ -94,4 +94,18 @@ students|>
   knitr::kable()
 ```
 
+## Question 9 
+
+```{r}
+students_a <- students|>
+  mutate(age=time_length(today() - birth_date, unit="year"))
+
+students_a |>
+  summarise(age=max(age), .by=group)|>
+  inner_join(students_a, by=join_by(age), keep=FALSE, suffix=c("",""))|>
+  select(group, age, id, sex)|>
+  arrange(desc(age))|>
+  knitr::kable()
+```
+
 
