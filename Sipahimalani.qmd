@@ -55,3 +55,12 @@ grades <- read_delim(here("data","grades.csv"),
                      na="$")
 ```
 
+
+## Question 5 
+
+```{r}
+students|>
+  ggplot(aes(x=group))+
+  geom_bar()
+```
+
